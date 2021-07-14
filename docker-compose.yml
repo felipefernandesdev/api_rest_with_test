@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  db:
+    image: postgres
+    container_name: pg-container
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: blog
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
